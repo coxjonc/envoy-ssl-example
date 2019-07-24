@@ -1,13 +1,10 @@
 FROM envoyproxy/envoy-dev:latest
 
-ADD envoy.yaml /etc/envoy.yaml
-
 RUN apt-get update && apt-get -q install -y \
     curl
 
-ENV SERVICE_NAME
-
 ADD start_envoy.sh /start_envoy.sh
+ADD envoy.yaml /etc/envoy.yaml
 
 RUN chmod +x /start_envoy.sh
 
