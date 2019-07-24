@@ -10,4 +10,6 @@ RUN chmod +x /start_envoy.sh
 
 ENTRYPOINT ["/bin/sh"]
 
+EXPOSE 443
+
 CMD ["start_envoy.sh"]
